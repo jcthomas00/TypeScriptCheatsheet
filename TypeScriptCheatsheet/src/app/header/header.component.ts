@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as Prism from 'prismjs'
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,8 @@ export class HeaderComponent implements OnInit {
       router.events.subscribe(
         (url:any) => {
           this.currentUrl = url.url ? url.url.replace("/",""):this.currentUrl;
+          if(this.currentUrl == '') this.currentUrl = 'functions'; // Default to functions pill highlighting
+          Prism.highlightAll();
       });
   }
 

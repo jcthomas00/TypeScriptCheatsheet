@@ -31,56 +31,56 @@
         </li>
     </ul>
     <pre><code  class="language-javascript">
-        //STEP 1
-        // Example of function declarations with different data types
-        function fn1(string):void; 
-        function fn1(number):void; 
+//STEP 1
+// Example of function declarations with different data types
+function fn1(string):void; 
+function fn1(number):void; 
 
-        // Example of function declarations with different sequence of parameters
-        function fn2(n1:number,s1:string):void; 
-        function fn2(s:string,n:number):void;
+// Example of function declarations with different sequence of parameters
+function fn2(n1:number,s1:string):void; 
+function fn2(s:string,n:number):void;
 
-        // Example of function declarations with a different number of parameters
-        function fn3(n1:string):void; 
-        function fn3(x:number,y:string):void;
+// Example of function declarations with a different number of parameters
+function fn3(n1:string):void; 
+function fn3(x:number,y:string):void;
 
-        //STEP 2 
+//STEP 2 
 
-        // Implementing the function (only for fn3 declarations)
-        function fn3(x:string|number,y?:string):void {{ '{' }} 
-            console.log(x); 
-            console.log(y); 
-        } 
+// Implementing the function (only for fn3 declarations)
+function fn3(x:string|number,y?:string):void {{ '{' }} 
+    console.log(x); 
+    console.log(y); 
+} 
 
-        //STEP 3
+//STEP 3
 
-        // Calling overloaded functions
-        fn3("abc") 
-        fn3(1,"xyz");
+// Calling overloaded functions
+fn3("abc") 
+fn3(1,"xyz");
     </code></pre>
 
     <h4 class="mt-5">Overloading Function Expressions</h4>
     Since we can use type declaration to define function's call signature, we can also use it to
     overload the function by providing multiple signatures in side the definition.
     <pre><code class="language-javascript">
-        // Overloaded function expression
-        type Reserve = {{ '{' }}
-            (from: Date, to: Date, destination: string): void
-            (from: Date, destination: string): void
-        }
+// Overloaded function expression
+type Reserve = {{ '{' }}
+    (from: Date, to: Date, destination: string): void
+    (from: Date, destination: string): void
+}
 
-        // Function implementation
-        let reserve: Reserve = (
-            from: Date,
-            toOrDestination: Date | string,
-            destination?: string
-        ) => {{ '{' }}
-            if(typeof toOrDestination === "string"){{ '{' }}
-                console.log(`Have a great trip to ${{ '{' }}toOrDestination} on ${{ '{' }}from.toLocaleDateString()}`)
-            }else{{ '{' }}
-                console.log(`Have fun in ${{ '{' }}destination} from ${{ '{' }}from.toLocaleDateString()} to ${{ '{' }}toOrDestination.toLocaleDateString()}`)
-            }
-        }
+// Function implementation
+let reserve: Reserve = (
+    from: Date,
+    toOrDestination: Date | string,
+    destination?: string
+) => {{ '{' }}
+    if(typeof toOrDestination === "string"){{ '{' }}
+        console.log(`Have a great trip to ${{ '{' }}toOrDestination} on ${{ '{' }}from.toLocaleDateString()}`)
+    }else{{ '{' }}
+        console.log(`Have fun in ${{ '{' }}destination} from ${{ '{' }}from.toLocaleDateString()} to ${{ '{' }}toOrDestination.toLocaleDateString()}`)
+    }
+}
     </code></pre>
 
     <h4 class="mt-5">Function Overloading Tips</h4>

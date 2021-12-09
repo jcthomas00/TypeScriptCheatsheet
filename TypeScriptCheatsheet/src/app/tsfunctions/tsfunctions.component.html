@@ -7,6 +7,7 @@
     <pre><code  class="language-javascript">
 function  function_name( ) {{ '{' }} } // function definition
 function_name() // function invocation
+
 </code></pre>
 
     <h4 class="mt-5">Positional parameters in Typescript Function</h4>
@@ -27,9 +28,10 @@ function_name() // function invocation
     </ul>
     <pre><code  class="language-javascript">
 function  function_name(p1: string = "hello", p2?: number) {{ '{' }}   
-console.log(p1);                                
-console.log(p2);                                
-}  
+    console.log(p1);                                
+    console.log(p2);                                
+} 
+
 </code></pre>
 
     <h4 class="mt-5">Typescript Function Types</h4>
@@ -62,12 +64,12 @@ type GreetFunction = (a: string) => void;
 
 // implement function of type GreetFuncti
 function printToConsole(s: string) {{ '{' }}    
-console.log(s);                     
+    console.log(s);                     
 }                                           
 
 // implement function that gets a parameter of type GreetFunction
 function greeter(fn: GreetFunction) {{ '{' }}   
-fn("Hello, World");                 
+    fn("Hello, World");                 
 }                                           
 
 // invoke function greeter               
