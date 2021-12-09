@@ -1,0 +1,29 @@
+    <!-- Header -->
+    <nav id="mdb-navbar" class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-2">
+        <div class="container-fluid ">
+
+            <div class="navbar-brand me-2">
+                <img src="https://d29fhpw069ctt2.cloudfront.net/icon/image/83180/preview.svg" alt="">
+                Tennis Stars
+            </div>
+            <!-- Pills navs -->
+            <ul class="nav nav-pills">
+                <li class="nav-item" role="presentation">
+                    <a [ngClass]="{'nav-link':true, 'active':this.currentUrl==='functions'}" routerLink="functions">
+                        Functions
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [ngClass]="{'nav-link':true, 'active':this.currentUrl==='function-overload'}" routerLink="function-overload">
+                        Function Overload
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [ngClass]="{'nav-link':true, 'active':this.currentUrl==='modules'}" routerLink="modules">
+                        Modules
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>

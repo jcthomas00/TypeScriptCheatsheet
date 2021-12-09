@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+:root{
+    --orange: #FD7F20;
+}
+.navbar-brand{
+    font-family: 'Smooch', cursive;
+    font-size: 33px;
+}
+.navbar-brand img{
+    max-width: 50px;
+}
+main{
+    padding-top: 90px;
+}
+pre.language-javascript {
+    padding-top: 0;
+}
+nav .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: var(--orange);
+}
+.heart{
+    color: var(--orange);
+}
+@media screen and (min-width: 900px) {
+    .container {
+        margin-top: 20px;
+        padding: 10px 20px;
+    }
+}
